@@ -68,21 +68,21 @@ const ExpenseAddr = () => {
     const getTransactionData = async () => {
       const token = Cookies.get('token');
       try {
-        const response1 = await axios.get('http://localhost:5000/api/transac/get-transaction', {
+        const response1 = await axios.get('https://deployed-mern-expense-tracker-server.vercel.app/api/transac/get-transaction', {
           headers: {
             Authorization: `${token}`
           }
         });
         setTransactionData(response1.data.latestTransaction);
 
-        const response2 = await axios.get('http://localhost:5000/api/transac/get-income-data', {
+        const response2 = await axios.get('https://deployed-mern-expense-tracker-server.vercel.app/api/transac/get-income-data', {
           headers: {
             Authorization: `${token}`
           }
         });
         setIncomeData(response2.data.income);
 
-        const response3 = await axios.get('http://localhost:5000/api/transac/get-expense-data', {
+        const response3 = await axios.get('https://deployed-mern-expense-tracker-server.vercel.app/api/transac/get-expense-data', {
           headers: {
             Authorization: `${token}`
           }
@@ -93,8 +93,8 @@ const ExpenseAddr = () => {
         console.error('Error fetching Transaction data: ', error.message);
       }
     };
-
-    getTransactionData();
+    if(!expenseData || !incomeData || !transactionData)
+      getTransactionData();
 
   }, [])
 
