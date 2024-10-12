@@ -9,6 +9,7 @@ app.use(bodyParser.json());
 app.use(
   cors({
     origin: 'http://localhost:3001', // Allow requests from this origin
+    methods: ["POST","GET"],
     credentials: true, // Enable sending cookies from the client
   })
 );
@@ -22,6 +23,10 @@ app.use('/api/auth',auth);
 app.use('/api/users', users);
 app.use('/api/transac',transaction);
 app.use('/api/splitwise',splitwise);
+
+app.get("/",(req,res)=>{
+  res.json("Welcome to Expense Tracker!!")
+})
 
 // -----
 const port = 5000;
