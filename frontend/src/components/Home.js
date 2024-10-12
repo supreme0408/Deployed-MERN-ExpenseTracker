@@ -46,7 +46,7 @@ const Home = () => {
       const fetchTransactionData = async () => {
         const token = Cookies.get('token');
         try {
-          const response = await axios.get('http://localhost:3001/api/transac/get-transaction', {
+          const response = await axios.get('https://deployed-mern-expense-tracker-server.vercel.app/api/transac/get-transaction', {
             headers: {
               Authorization: `${token}`,
             },

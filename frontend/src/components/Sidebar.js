@@ -8,7 +8,7 @@ export default function Sidebar() {
   const navigate = useNavigate();
   const handleLogout = async () => {
     try {
-      await axios.post('http://localhost:5000/api/auth/logout');
+      await axios.post('https://deployed-mern-expense-tracker-server.vercel.app/api/auth/logout');
       Cookies.remove('token'); // Clear the token from cookies
       alert('logout');
       navigate('/'); // Redirect to the login page or any other appropriate route

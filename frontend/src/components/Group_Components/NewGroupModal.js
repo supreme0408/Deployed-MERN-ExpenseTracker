@@ -9,7 +9,7 @@ const NewGroupModal = ({ onClose, onCreate }) => {
   const handleCreateGroup = async () => {
     try {
       const token = Cookies.get('token');
-      const response = await axios.post('http://localhost:5000/api/splitwise/make-group', {
+      const response = await axios.post('https://deployed-mern-expense-tracker-server.vercel.app/api/splitwise/make-group', {
         name,
         members: members.split(',').map((m) => m.trim()),
       },{

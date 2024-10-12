@@ -14,7 +14,7 @@ const SplitWise = ()=>{
     // Fetch groups for the current user
     const fetchGroups = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/splitwise/my-groups',{
+        const response = await axios.get('https://deployed-mern-expense-tracker-server.vercel.app/api/splitwise/my-groups',{
           headers:{
             Authorization:`${token}`
           }

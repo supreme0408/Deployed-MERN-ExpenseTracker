@@ -19,7 +19,7 @@ const AnalyticsBarChart = () => {
       setLoading(true);
       try {
         const token = Cookies.get('token');
-        const response = await axios.get(`http://localhost:5000/api/transac/analytics/bar/${year}`, {
+        const response = await axios.get(`https://deployed-mern-expense-tracker-server.vercel.app/api/transac/analytics/bar/${year}`, {
           headers: {
             Authorization: `${token}`
           }

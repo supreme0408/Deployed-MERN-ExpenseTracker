@@ -14,7 +14,7 @@ const GroupDetails = ({ groupId }) => {
     const fetchGroupDetails = async () => {
       try {
         const token = Cookies.get('token');
-        const response = await axios.get(`http://localhost:5000/api/splitwise/${groupId}`,{
+        const response = await axios.get(`https://deployed-mern-expense-tracker-server.vercel.app/api/splitwise/${groupId}`,{
             headers:{
               Authorization:`${token}`
             }
@@ -31,7 +31,7 @@ const GroupDetails = ({ groupId }) => {
         try {
           setLoading(true);
           const token = Cookies.get('token'); 
-          const response = await axios.get(`http://localhost:5000/api/splitwise/${groupId}/payments`, {
+          const response = await axios.get(`https://deployed-mern-expense-tracker-server.vercel.app/api/splitwise/${groupId}/payments`, {
             headers: {
               Authorization: `${token}`, // Attach the token to the request headers
             },
@@ -57,7 +57,7 @@ const GroupDetails = ({ groupId }) => {
   const handleAddPayment = async () => {
     try {
     const token = Cookies.get('token');
-      const response = await axios.post(`http://localhost:5000/api/splitwise/${groupId}/payments`, newPayment,{
+      const response = await axios.post(`https://deployed-mern-expense-tracker-server.vercel.app/api/splitwise/${groupId}/payments`, newPayment,{
         headers:{
           Authorization:`${token}`
         }
@@ -75,14 +75,14 @@ const GroupDetails = ({ groupId }) => {
         const token = Cookies.get('token');
         // console.log("Token: ", token);
         // console.log("GRPID: ",groupId);
-      const response = await axios.post(`http://localhost:5000/api/splitwise/${groupId}/split`,{},{
+      const response = await axios.post(`https://deployed-mern-expense-tracker-server.vercel.app/api/splitwise/${groupId}/split`,{},{
         headers:{
           Authorization:`${token}`
         }
     });
       alert(`Settlement:\n${JSON.stringify(response.data.transactions, null, 2)}`);
       // Refresh group details
-      const updatedGroup = await axios.get(`http://localhost:5000/api/splitwise/${groupId}`,{
+      const updatedGroup = await axios.get(`https://deployed-mern-expense-tracker-server.vercel.app/api/splitwise/${groupId}`,{
         headers:{
           Authorization:`${token}`
         }

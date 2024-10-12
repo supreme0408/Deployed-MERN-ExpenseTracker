@@ -11,7 +11,7 @@ const Register = () => {
     const handleRegister = (e) => {
         e.preventDefault();
 
-        axios.post('http://localhost:5000/api/auth/register', {
+        axios.post('https://deployed-mern-expense-tracker-server.vercel.app/api/auth/register', {
             username,
             email,
             password,

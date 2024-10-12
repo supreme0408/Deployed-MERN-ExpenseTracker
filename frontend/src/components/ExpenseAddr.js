@@ -28,7 +28,7 @@ const ExpenseAddr = () => {
       const token = Cookies.get('token');
       let type = '';
       isExpense ? type = 'expense' : type = 'income';
-      const response = await axios.post('http://localhost:3001/api/transac/add-transac', { amount, category, type }, {
+      const response = await axios.post('https://deployed-mern-expense-tracker-server.vercel.app/api/transac/add-transac', { amount, category, type }, {
         headers: {
           Authorization: `${token}`, // Attach the token to the request headers
         },
@@ -49,7 +49,7 @@ const ExpenseAddr = () => {
   //     try {
   //         console.log("Amount:"+ amount+" Category= "+ category);
   //         const token = Cookies.get('token'); 
-  //         const response = await axios.post('http://localhost:3001/api/auth/add-expense', {amount,category},{
+  //         const response = await axios.post('https://deployed-mern-expense-tracker-server.vercel.app/api/auth/add-expense', {amount,category},{
   //             headers: {
   //                 Authorization: `${token}`, // Attach the token to the request headers
   //             },

@@ -16,7 +16,7 @@ const Login = () => {
     setLoading(true);
     try {
       console.log("Sending login request to the server...");
-      const response = await axios.post('http://localhost:5000/api/auth/login', {
+      const response = await axios.post('https://deployed-mern-expense-tracker-server.vercel.app/api/auth/login', {
         username,
         password
       }, {
