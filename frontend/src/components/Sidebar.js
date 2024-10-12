@@ -4,7 +4,7 @@ import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
 
 export default function Sidebar() {
-
+  axios.defaults.withCredentials = true;
   const navigate = useNavigate();
   const handleLogout = async () => {
     try {

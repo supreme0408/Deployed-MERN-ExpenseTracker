@@ -10,7 +10,7 @@ const ExpenseAddr = () => {
   const [transactionData, setTransactionData] = useState(null);
   const [incomeData, setIncomeData] = useState(null);
   const [expenseData, setExpenseData] = useState(null);
-
+  axios.defaults.withCredentials = true;
 
   const toggleExpenseIncome = () => {
     setIsExpense(!isExpense);

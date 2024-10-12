@@ -8,7 +8,7 @@ import GroupDetails from './Group_Components/GroupDetails';
 const SplitWise = ()=>{
   const [groups, setGroups] = useState([]);
   const [selectedGroup, setSelectedGroup] = useState(null);
-
+  axios.defaults.withCredentials = true;
   useEffect(() => {
     const token = Cookies.get('token');
     // Fetch groups for the current user

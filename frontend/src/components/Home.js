@@ -14,7 +14,7 @@ const Home = () => {
   const [user, setUser] = useState(null);
 
   const navigate = useNavigate();
-
+  axios.defaults.withCredentials = true;
 
   useEffect(() => {
     // Get all tab buttons and content panes
@@ -62,7 +62,7 @@ const Home = () => {
     }
     const getUser = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/auth/user', {
+        const response = await axios.get('https://deployed-mern-expense-tracker-server.vercel.app/api/auth/user', {
           headers: {
             Authorization: `${token}`,
           },

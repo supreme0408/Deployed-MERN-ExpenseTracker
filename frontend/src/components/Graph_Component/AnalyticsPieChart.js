@@ -10,7 +10,7 @@ const AnalyticsPieCharts = () => {
   const [incomeData, setIncomeData] = useState({});
   const [expenseData, setExpenseData] = useState({});
   const [loading, setLoading] = useState(true);
-
+  axios.defaults.withCredentials = true;
   useEffect(() => {
     const fetchData = async () => {
         setLoading(true);

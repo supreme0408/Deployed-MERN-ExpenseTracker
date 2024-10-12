@@ -8,7 +8,7 @@ const GroupDetails = ({ groupId }) => {
   const [payments, setPayments] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  axios.defaults.withCredentials = true;
   useEffect(() => {
     // Fetch group details
     const fetchGroupDetails = async () => {

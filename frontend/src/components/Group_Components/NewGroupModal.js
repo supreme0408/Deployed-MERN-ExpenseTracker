@@ -5,7 +5,7 @@ import Cookies from 'js-cookie';
 const NewGroupModal = ({ onClose, onCreate }) => {
   const [name, setName] = useState('');
   const [members, setMembers] = useState('');
-
+  axios.defaults.withCredentials = true;
   const handleCreateGroup = async () => {
     try {
       const token = Cookies.get('token');

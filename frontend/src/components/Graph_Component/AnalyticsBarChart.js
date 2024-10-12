@@ -13,7 +13,7 @@ const AnalyticsBarChart = () => {
   });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  axios.defaults.withCredentials = true;
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
