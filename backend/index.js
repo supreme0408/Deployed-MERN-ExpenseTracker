@@ -8,7 +8,7 @@ require('./database');
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: 'http://localhost:3001', // Allow requests from this origin
+    origin: ["http://localhost:3001","https://deployed-mern-expense-tracker-server.vercel.app/"], // Allow requests from this origin
     methods: ["POST","GET"],
     credentials: true, // Enable sending cookies from the client
   })
