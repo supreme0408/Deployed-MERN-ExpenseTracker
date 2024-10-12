@@ -93,7 +93,7 @@ const ExpenseAddr = () => {
         console.error('Error fetching Transaction data: ', error.message);
       }
     };
-    if(!expenseData || !incomeData || !transactionData)
+    if(!expenseData || !incomeData)
       getTransactionData();
 
   }, [])
